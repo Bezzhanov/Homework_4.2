@@ -20,6 +20,17 @@ public:
 
 	};
 
+	void sort(Adress* adress_arr, int count) {
+		for (int i = 0; i < count; ++i) {
+
+
+
+
+
+	}
+		
+	};
+
 protected:
 	std::string City;
 	std::string Street;
