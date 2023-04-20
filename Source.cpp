@@ -18,18 +18,18 @@ public:
 	};
 
 	void sort(Adress* adress_arr, int count) {
-		
+
 		for (int i = 0; i < count; ++i) {
-			for(int j = i + 1; j < count; ++j) {
-				if(adress_arr[i].City > adress_arr[j].City) {
-			Adress temp_adr = adress_arr[i];
-			adress_arr[i] = adress_arr[j];
-			adress_arr[j] = temp_adr;
+			for (int j = i + 1; j < count; ++j) {
+				if (adress_arr[i].City > adress_arr[j].City) {
+					Adress temp_adr = adress_arr[i];
+					adress_arr[i] = adress_arr[j];
+					adress_arr[j] = temp_adr;
 
 				}
 			}
-	}
-		
+		}
+
 	};
 
 protected:
@@ -59,7 +59,7 @@ int main() {
 			intxt >> House;
 			intxt >> Apparts;
 			adress_arr[i] = Adress(City, Street, House, Apparts);
-			
+
 		}
 		//
 		adress_arr->sort(adress_arr, count);
