@@ -17,7 +17,7 @@ public:
 
 	};
 
-	void sort(Adress* adress_arr, int count) {
+static	void sort(Adress* adress_arr, int count) {
 
 		for (int i = 0; i < count; ++i) {
 			for (int j = i + 1; j < count; ++j) {
