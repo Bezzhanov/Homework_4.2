@@ -17,20 +17,11 @@ public:
 
 	};
 
-static	void sort(Adress* adress_arr, int count) {
-
-		for (int i = 0; i < count; ++i) {
-			for (int j = i + 1; j < count; ++j) {
-				if (adress_arr[i].City > adress_arr[j].City) {
-					Adress temp_adr = adress_arr[i];
-					adress_arr[i] = adress_arr[j];
-					adress_arr[j] = temp_adr;
-
-				}
-			}
-		}
-
+	std::string get_city(Adress* adress_arr, int counter) {
+		return adress_arr[counter].City;
+	
 	};
+
 
 protected:
 	std::string City;
@@ -39,7 +30,20 @@ protected:
 	int Apparts{};
 };
 
+void sort(Adress* adress_arr, int count) {
 
+	for (int i = 0; i < count; ++i) {
+		for (int j = i + 1; j < count; ++j) {
+			if (adress_arr[i].get_city(adress_arr, i) > adress_arr[j].get_city(adress_arr, j)) {
+				Adress temp_adr = adress_arr[i];
+				adress_arr[i] = adress_arr[j];
+				adress_arr[j] = temp_adr;
+
+			}
+		}
+	}
+
+};
 
 int main() {
 	std::ifstream(intxt);
@@ -62,7 +66,7 @@ int main() {
 
 		}
 		//
-		adress_arr->sort(adress_arr, count);
+		sort(adress_arr, count);
 		std::ofstream(outtxt);
 		outtxt.open("out.txt");
 		if (outtxt) {
