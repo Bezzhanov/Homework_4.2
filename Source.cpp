@@ -17,8 +17,8 @@ public:
 
 	};
 
-	std::string get_city(Adress* adress_arr, int counter) {
-		return adress_arr[counter].City;
+	std::string get_city() {
+		return this->City;
 	
 	};
 
@@ -34,7 +34,7 @@ void sort(Adress* adress_arr, int count) {
 
 	for (int i = 0; i < count; ++i) {
 		for (int j = i + 1; j < count; ++j) {
-			if (adress_arr[i].get_city(adress_arr, i) > adress_arr[j].get_city(adress_arr, j)) {
+			if (adress_arr[i].get_city() > adress_arr[j].get_city()) {
 				Adress temp_adr = adress_arr[i];
 				adress_arr[i] = adress_arr[j];
 				adress_arr[j] = temp_adr;
